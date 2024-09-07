@@ -4,7 +4,7 @@
 
 ## 插件配置
 
-将 `plugins/db` 目录下的 `config.json.template` 配置模板复制为最终生效的 `config.json`。 (如果未配置则会默认使用`config.json.template`模板中配置)。
+将 `plugins/db` 目录下的 `config.json.template` 配置模板复制为最终生效的 `config.json`。 (如果未配置插件不能正常使用)。
 
 以下是插件配置项说明：
 

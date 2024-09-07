@@ -3,10 +3,7 @@
 import plugins
 from bridge.context import ContextType
 from bridge.reply import Reply, ReplyType
-from channel.chat_message import ChatMessage
-from common.log import logger
 from plugins import *
-from config import conf
 import mysql.connector
 
 
@@ -80,7 +77,7 @@ class db(Plugin):
                 reply.content = "查询失败"
 
             e_context["reply"] = reply
-            e_context.action = EventAction.BREAK_PASS  # 事件结束，并跳过处理context的默认逻辑
+            e_context.action = EventAction.BREAK_PASS  
 
         if content == "Sql菜单":
             reply = Reply()
@@ -89,11 +86,6 @@ class db(Plugin):
             e_context["reply"] = reply
             e_context.action = EventAction.BREAK_PASS
 
-        # if content == "Sql菜单":
-        #     # 如果是文本消息"End"，将请求转换成"IMAGE_CREATE"，并将content设置为"The World"
-        #     e_context["context"].type = ContextType.IMAGE_CREATE
-        #     content = "The World"
-        #     e_context.action = EventAction.CONTINUE  # 事件继续，交付给下个插件或默认逻辑
 
     def get_help_text(self, **kwargs):
         help_text = "输入'Sql菜单'我会告诉你如何进行操作\n嘿嘿嘿\n"
